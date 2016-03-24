@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/echolib" />
             <option value="$PROJECT_DIR$/facelib" />
+            <option value="$PROJECT_DIR$/otherfacelib" />
           </set>
         </option>
         <option name="myModules">
@@ -19,6 +20,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/echolib" />
             <option value="$PROJECT_DIR$/facelib" />
+            <option value="$PROJECT_DIR$/otherfacelib" />
           </set>
         </option>
       </GradleProjectSettings>

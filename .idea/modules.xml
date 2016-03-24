@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/echolib/echolib.iml" filepath="$PROJECT_DIR$/echolib/echolib.iml" />
       <module fileurl="file://$PROJECT_DIR$/facelib/facelib.iml" filepath="$PROJECT_DIR$/facelib/facelib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/otherfacelib/otherfacelib.iml" filepath="$PROJECT_DIR$/otherfacelib/otherfacelib.iml" />
     </modules>
   </component>
 </project>

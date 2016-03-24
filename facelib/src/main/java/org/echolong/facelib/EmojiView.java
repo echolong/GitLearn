@@ -38,9 +38,11 @@ final class EmojiView extends FrameLayout implements ViewPager.OnPageChangeListe
     private static final long                       INITIAL_INTERVAL          = TimeUnit.SECONDS.toMillis(1) / 2;
     private static final int                        NORMAL_INTERVAL           = 50;
 
-    @ColorInt private final int                     themeAccentColor;
+    @ColorInt
+    private final int                     themeAccentColor;
 
-    @Nullable private OnEmojiBackspaceClickListener onEmojiBackspaceClickListener;
+    @Nullable
+    private OnEmojiBackspaceClickListener onEmojiBackspaceClickListener;
 
     private int                                     emojiTabLastSelectedIndex = -1;
     private final ImageView[]                       emojiTabs;

@@ -1,1 +1,1 @@
-include ':app', ':echolib', ':facelib'
+include ':app', ':echolib', ':facelib', ':otherfacelib'

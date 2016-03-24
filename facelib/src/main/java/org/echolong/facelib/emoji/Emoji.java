@@ -4,6 +4,11 @@ import java.io.Serializable;
 
 public final class Emoji implements Serializable {
     private static final long serialVersionUID = 1L;
+    private final String emoji;
+
+    private Emoji(final String emoji) {
+        this.emoji = emoji;
+    }
 
     public static Emoji fromCodePoint(final int codePoint) {
         return new Emoji(newString(codePoint));
@@ -23,12 +28,6 @@ public final class Emoji implements Serializable {
         } else {
             return new String(Character.toChars(codePoint));
         }
-    }
-
-    private final String emoji;
-
-    private Emoji(final String emoji) {
-        this.emoji = emoji;
     }
 
     public String getEmoji() {

@@ -13,8 +13,6 @@ android {
     }
 
     packagingOptions {
-//        exclude 'META-INF/maven/com.google.code.findbugs/jsr305/pom.properties'
-//        exclude 'META-INF/maven/com.google.code.findbugs/jsr305/pom.xml'
         exclude 'META-INF/maven/com.google.code.findbugs/annotations/pom.xml'
         exclude 'META-INF/maven/com.google.code.findbugs/annotations/pom.properties'
 
