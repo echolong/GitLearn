@@ -17,6 +17,7 @@ import org.echolong.otherfacelib.OtherFaceActivity;
 public class MainActivity extends AppCompatActivity {
 
     private ListView funcList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,26 +26,31 @@ public class MainActivity extends AppCompatActivity {
                 "MatchViewActivity",
                 "MissViewActivity",
                 "EmojiActivity",
-                "OtherFaceActivity"
+                "OtherFaceActivity",
+                "WebviewActivity"
         };
-        funcList = (ListView)findViewById(R.id.func_list);
-        funcList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,strings));
+        funcList = (ListView) findViewById(R.id.func_list);
+        funcList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, strings));
         funcList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
-                switch (position){
+                switch (position) {
                     case 0:
-                        intent.setClass(MainActivity.this,MatchViewActivity.class);
+                        intent.setClass(MainActivity.this, MatchViewActivity.class);
                         break;
                     case 1:
-                        intent.setClass(MainActivity.this,MissViewActivity.class);
+                        intent.setClass(MainActivity.this, MissViewActivity.class);
                         break;
                     case 2:
                         intent.setClass(MainActivity.this, EmojiActivity.class);
                         break;
                     case 3:
                         intent.setClass(MainActivity.this, OtherFaceActivity.class);
+                        break;
+                    case 4:
+                        intent.setClass(MainActivity.this, WebViewActivity.class);
+                        break;
                 }
                 startActivity(intent);
             }
