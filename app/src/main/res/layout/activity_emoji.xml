@@ -43,6 +43,7 @@
             android:imeOptions="actionSend"
             android:inputType="textCapSentences|textMultiLine"
             android:maxLines="3"
+            android:textSize="18sp"
             app:emojiSize="26sp"/>
 
         <ImageView

@@ -15,7 +15,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.PopupWindow;
 
-import org.echolong.facelib.emoji.Emoji;
+import org.echolong.facelib.emoji.EmojiText;
 import org.echolong.facelib.listeners.OnEmojiBackspaceClickListener;
 import org.echolong.facelib.listeners.OnEmojiClickedListener;
 import org.echolong.facelib.listeners.OnEmojiPopupDismissListener;
@@ -54,7 +54,7 @@ public final class EmojiPopup {
 
         final EmojiView emojiView = new EmojiView(context, new OnEmojiClickedListener() {
             @Override
-            public void onEmojiClicked(final Emoji emoji) {
+            public void onEmojiClicked(final EmojiText emoji) {
                 emojiEditText.input(emoji);
 
                 if (onEmojiClickedListener != null) {

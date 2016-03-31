@@ -16,11 +16,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import org.echolong.facelib.emoji.Nature;
-import org.echolong.facelib.emoji.Objects;
-import org.echolong.facelib.emoji.People;
-import org.echolong.facelib.emoji.Places;
-import org.echolong.facelib.emoji.Symbols;
+import org.echolong.facelib.emoji.Teaworm;
 import org.echolong.facelib.listeners.OnEmojiBackspaceClickListener;
 import org.echolong.facelib.listeners.OnEmojiClickedListener;
 import org.echolong.facelib.listeners.RepeatListener;
@@ -29,23 +25,20 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 @SuppressLint("ViewConstructor")
 final class EmojiView extends FrameLayout implements ViewPager.OnPageChangeListener {
-    private static final int                        PEOPLE_INDEX              = 0;
-    private static final int                        NATURE_INDEX              = 1;
-    private static final int                        OBJECTS_INDEX             = 2;
-    private static final int                        CARS_INDEX                = 3;
-    private static final int                        PUNCTUATION_INDEX         = 4;
+    private static final int PEOPLE_INDEX = 0;
+    private static final int TEAWORM_INDEX = 1;
 
-    private static final long                       INITIAL_INTERVAL          = TimeUnit.SECONDS.toMillis(1) / 2;
-    private static final int                        NORMAL_INTERVAL           = 50;
+    private static final long INITIAL_INTERVAL = TimeUnit.SECONDS.toMillis(1) / 2;
+    private static final int NORMAL_INTERVAL = 50;
 
     @ColorInt
-    private final int                     themeAccentColor;
+    private final int themeAccentColor;
 
     @Nullable
     private OnEmojiBackspaceClickListener onEmojiBackspaceClickListener;
 
-    private int                                     emojiTabLastSelectedIndex = -1;
-    private final ImageView[]                       emojiTabs;
+    private int emojiTabLastSelectedIndex = -1;
+    private final ImageView[] emojiTabs;
 
     EmojiView(final Context context, final OnEmojiClickedListener onEmojiClickedListener) {
         super(context);
@@ -59,12 +52,9 @@ final class EmojiView extends FrameLayout implements ViewPager.OnPageChangeListe
         final EmojiPagerAdapter emojisAdapter = new EmojiPagerAdapter(views);
         emojisPager.setAdapter(emojisAdapter);
 
-        emojiTabs = new ImageView[PUNCTUATION_INDEX + 1];
+        emojiTabs = new ImageView[TEAWORM_INDEX + 1];
         emojiTabs[PEOPLE_INDEX] = (ImageView) findViewById(R.id.emojis_tab_0_people);
-        emojiTabs[NATURE_INDEX] = (ImageView) findViewById(R.id.emojis_tab_1_nature);
-        emojiTabs[OBJECTS_INDEX] = (ImageView) findViewById(R.id.emojis_tab_2_objects);
-        emojiTabs[CARS_INDEX] = (ImageView) findViewById(R.id.emojis_tab_3_cars);
-        emojiTabs[PUNCTUATION_INDEX] = (ImageView) findViewById(R.id.emojis_tab_4_punctuation);
+        emojiTabs[TEAWORM_INDEX] = (ImageView) findViewById(R.id.emojis_tab_1_nature);
 
         handleOnClicks(emojisPager);
 
@@ -104,12 +94,8 @@ final class EmojiView extends FrameLayout implements ViewPager.OnPageChangeListe
 
     @NonNull
     private List<EmojiGridView> getViews(final Context context, @Nullable final OnEmojiClickedListener onEmojiClickedListener) {
-        final EmojiGridView peopleGridView = new EmojiGridView(context).init(People.DATA, onEmojiClickedListener);
-        final EmojiGridView natureGridView = new EmojiGridView(context).init(Nature.DATA, onEmojiClickedListener);
-        final EmojiGridView objectsGridView = new EmojiGridView(context).init(Objects.DATA, onEmojiClickedListener);
-        final EmojiGridView lacesGridView = new EmojiGridView(context).init(Places.DATA, onEmojiClickedListener);
-        final EmojiGridView symbolsGridView = new EmojiGridView(context).init(Symbols.DATA, onEmojiClickedListener);
-        return Arrays.asList(peopleGridView, natureGridView, objectsGridView, lacesGridView, symbolsGridView);
+        final EmojiGridView teawormGridView = new EmojiGridView(context).init(Teaworm.DATA, onEmojiClickedListener);
+        return Arrays.asList( teawormGridView);
     }
 
     @Override
@@ -117,10 +103,7 @@ final class EmojiView extends FrameLayout implements ViewPager.OnPageChangeListe
         if (emojiTabLastSelectedIndex != i) {
             switch (i) {
                 case PEOPLE_INDEX:
-                case NATURE_INDEX:
-                case OBJECTS_INDEX:
-                case CARS_INDEX:
-                case PUNCTUATION_INDEX:
+                case TEAWORM_INDEX:
                     if (emojiTabLastSelectedIndex >= 0 && emojiTabLastSelectedIndex < emojiTabs.length) {
                         emojiTabs[emojiTabLastSelectedIndex].setSelected(false);
                         emojiTabs[emojiTabLastSelectedIndex].clearColorFilter();

@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 import org.echolong.facelib.EmojiEditText;
 import org.echolong.facelib.EmojiPopup;
-import org.echolong.facelib.emoji.Emoji;
+import org.echolong.facelib.emoji.EmojiText;
 import org.echolong.facelib.listeners.OnEmojiBackspaceClickListener;
 import org.echolong.facelib.listeners.OnEmojiClickedListener;
 import org.echolong.facelib.listeners.OnEmojiPopupDismissListener;
@@ -88,7 +88,7 @@ public class EmojiActivity extends AppCompatActivity {
             }
         }).setOnEmojiClickedListener(new OnEmojiClickedListener() {
             @Override
-            public void onEmojiClicked(final Emoji emoji) {
+            public void onEmojiClicked(final EmojiText emoji) {
                 Log.d("MainActivity", "Clicked on emoji");
             }
         }).setOnEmojiPopupShownListener(new OnEmojiPopupShownListener() {

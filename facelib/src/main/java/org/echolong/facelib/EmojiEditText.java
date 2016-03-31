@@ -3,11 +3,12 @@ package org.echolong.facelib;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
+import android.text.SpannableString;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.widget.EditText;
 
-import org.echolong.facelib.emoji.Emoji;
+import org.echolong.facelib.emoji.EmojiText;
 
 
 public class EmojiEditText extends EditText {
@@ -46,7 +47,7 @@ public class EmojiEditText extends EditText {
 
     @Override
     protected void onTextChanged(final CharSequence text, final int start, final int lengthBefore, final int lengthAfter) {
-        EmojiHandler.addEmojis(getContext(), getText(), emojiSize);
+        EmojiTextHandler.addEmojis(getContext(), getText(), (int) this.getTextSize());
     }
 
     public void setEmojiSize(final int pixels) {
@@ -58,7 +59,7 @@ public class EmojiEditText extends EditText {
         dispatchKeyEvent(event);
     }
 
-    public void input(final Emoji emoji) {
+    public void input(final EmojiText emoji) {
         if (emoji != null) {
             final int start = getSelectionStart();
             final int end = getSelectionEnd();

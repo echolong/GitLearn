@@ -45,7 +45,8 @@ public class EmojiTextView extends TextView {
     public void setText(final CharSequence rawText, final BufferType type) {
         final CharSequence text = rawText == null ? "" : rawText;
         final SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text);
-        EmojiHandler.addEmojis(getContext(), spannableStringBuilder, emojiSize);
+//        EmojiHandler.addEmojis(getContext(), spannableStringBuilder, emojiSize);
+        EmojiTextHandler.addEmojis(getContext(), spannableStringBuilder,(int) this.getTextSize());
         super.setText(spannableStringBuilder, type);
     }
 

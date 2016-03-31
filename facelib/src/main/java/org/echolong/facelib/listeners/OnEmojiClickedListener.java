@@ -1,8 +1,7 @@
 package org.echolong.facelib.listeners;
 
-
-import org.echolong.facelib.emoji.Emoji;
+import org.echolong.facelib.emoji.EmojiText;
 
 public interface OnEmojiClickedListener {
-    void onEmojiClicked(final Emoji emoji);
+    void onEmojiClicked(final EmojiText emoji);
 }

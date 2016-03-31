@@ -2,21 +2,23 @@ package org.echolong.facelib;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import org.echolong.facelib.emoji.Emoji;
+import org.echolong.facelib.emoji.EmojiText;
 import org.echolong.facelib.listeners.OnEmojiClickedListener;
 
 
-final class EmojiArrayAdapter extends ArrayAdapter<Emoji> {
-    @Nullable private OnEmojiClickedListener onEmojiClickedListener;
+final class EmojiArrayAdapter extends ArrayAdapter<EmojiText> {
+    @Nullable
+    private OnEmojiClickedListener onEmojiClickedListener;
 
     @SuppressWarnings("PMD.UseVarargs")
-    EmojiArrayAdapter(final Context context, final Emoji[] data) {
+    EmojiArrayAdapter(final Context context, final EmojiText[] data) {
         super(context, R.layout.emoji_text_view, data);
     }
 
@@ -31,9 +33,11 @@ final class EmojiArrayAdapter extends ArrayAdapter<Emoji> {
             view.setTag(holder);
         }
 
-        final Emoji emoji = getItem(position);
+        final EmojiText emoji = getItem(position);
         final ViewHolder holder = (ViewHolder) view.getTag();
         holder.emoji = emoji;
+        EmojiTextHandler.addEmojis(getContext(), new SpannableString(emoji.getEmoji()),(int) holder.icon.getTextSize());
+//        holder.icon.setText();
         holder.icon.setText(emoji.getEmoji());
 
         view.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +58,7 @@ final class EmojiArrayAdapter extends ArrayAdapter<Emoji> {
     }
 
     static class ViewHolder {
-        Emoji    emoji;
+        EmojiText emoji;
         TextView icon;
     }
 }
