@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.echolong.gitlearn.ViewSystemActivity">
+
+    <Button
+        android:id="@+id/gesuture_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试"/>
+    <TextView
+        android:id="@+id/test_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layer_drawable"
+        android:text="测试文字"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bitmap_drawable"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/shape_drawable"
+        android:visibility="gone"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/layer_drawable"/>
+    <TextView
+        android:id="@+id/transtion_txt"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Transition_layer"
+        android:background="@drawable/transition_drawable"/>
+</LinearLayout>

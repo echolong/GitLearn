@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
                 "MissViewActivity",
                 "EmojiActivity",
                 "OtherFaceActivity",
-                "WebviewActivity"
+                "WebviewActivity",
+                "ViewSystemActivity"
         };
         funcList = (ListView) findViewById(R.id.func_list);
         funcList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, strings));
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 4:
                         intent.setClass(MainActivity.this, WebViewActivity.class);
+                        break;
+                    case 5:
+                        intent.setClass(MainActivity.this,ViewSystemActivity.class);
                         break;
                 }
                 startActivity(intent);
